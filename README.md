@@ -1,10 +1,10 @@
-# Passive Soft Base Attaching Gripper
+# SOBER: A Soft Base Passive Gripper for Surface Attachment
 
-This repository contains the design models and figures for the passive soft base attaching gripper, as presented in the IEEE scientific article [Article Title, Year].
+This repository contains the design models and figures for the SOBER gripper, as presented in the IEEE scientific article [Article Title, Year].
 
 ## Overview
 
-The passive soft base attaching gripper is designed for [brief description of the gripper's purpose, e.g., robotic manipulation in unstructured environments]. This repository provides all necessary models to replicate the design, ensuring reproducibility and accessibility.
+The SOBER gripper is designed for [brief description of the gripper's purpose, e.g., robotic manipulation in unstructured environments]. This repository provides all necessary models to replicate the design, ensuring reproducibility and accessibility.
 
 ## Visual Overview
 
