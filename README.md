@@ -1,4 +1,4 @@
-# SOBER: A Soft Base Passive Gripper for Surface Attachment
+# SPLAT: Soft Peelable Lifting-Ring Adhesion Tool for Aerial Perching
 
 This repository contains the design models and figures for the SOBER gripper, submitted to the 2026 IEEE Advanced Intelligent Mechatronics (AIM) Conference.
 
