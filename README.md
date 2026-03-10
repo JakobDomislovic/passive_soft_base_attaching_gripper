@@ -1,4 +1,4 @@
-# SPLAT: Soft Peelable Lifting-Ring Adhesion Tool for Aerial Perching
+# SPLAT: Soft Peelable Lifting-Lip Adhesion Tool for Aerial Perching
 
 This repository contains the design models and figures for the SPLAT gripper, submitted to the 2026 IEEE Advanced Intelligent Mechatronics (AIM) Conference.
 
@@ -12,7 +12,7 @@ Here are key views of the gripper assembly:
 
 | Top | Side View | Bottom View |
 |----------|-----------|-------------|
-| ![Top View](Figures/Top%20view.png) | ![Side View](Figures/Side%20view.png) | ![Bottom View](Figures/Bottom%20view.png) |
+| ![Top View](./docs/Media/Figures/Top%20view.png) | ![Side View](./docs/Media/Figures/Side%20view.png) | ![Bottom View](./docs/Media/Figures/Bottom%20view.png) |
 
 
 ## Repository Structure
