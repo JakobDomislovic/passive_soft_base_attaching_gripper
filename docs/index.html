@@ -177,20 +177,39 @@
             </div>
           </div>
 
-          <div class="columns is-centered" style="margin-top: 2rem; gap: 16px;">
-            <div class="column is-one-third">
-              <figure class="image">
-                <img src="./Media/Figures/Mode1_labeled.png" alt="Attachment mode"
-                  style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
-              </figure>
-              <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666; font-style: italic;">Attachment</p>
+          <!-- Release modes -->
+          <div class="content has-text-justified" style="margin-top: 2rem;">
+            <p>
+              SPLAT supports two detachment modes depending on which degree of freedom the host robot applies.
+              <strong>Mode 1</strong> is the intended, controllable release: a commanded yaw rotation produces near-uniform torsion of the soft base, symmetrically shortening all four tethers and peeling all suction cups simultaneously.
+              <strong>Mode 2</strong> is an asymmetric local peel triggered by a roll or pitch disturbance — for example, gravity acting on a tilted surface. This mode may initiate peel in a single cup without causing full release, which improves robustness during attachment. The design selects a large release rotation threshold so that gravity-induced deflections in Mode 2 remain well below the full-release point, and only a deliberate yaw command in Mode 1 triggers controlled detachment.
+            </p>
+          </div>
+
+          <div class="columns is-centered" style="margin-top: 1.5rem;">
+            <div class="column is-two-fifths">
+              <div style="background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+                <figure class="image">
+                  <img src="./Media/Figures/Mode1_labeled.png" alt="Mode 1: yaw-driven global torsional release"
+                    style="width: 100%; height: auto;"/>
+                </figure>
+                <div style="padding: 0.75rem 1rem;">
+                  <p style="font-weight: bold; color: #F5821F; margin-bottom: 0.25rem; font-size: 0.85rem;">MODE 1 — GLOBAL TORSIONAL RELEASE</p>
+                  <p style="font-size: 0.85rem; color: #555;">Yaw rotation produces near-uniform base twist and symmetric tether tension, peeling all four cups simultaneously. Intended, controllable release.</p>
+                </div>
+              </div>
             </div>
-            <div class="column is-one-third">
-              <figure class="image">
-                <img src="./Media/Figures/Mode2_labeled.png" alt="Release mode"
-                  style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
-              </figure>
-              <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666; font-style: italic;">Release (yaw-driven peeling)</p>
+            <div class="column is-two-fifths">
+              <div style="background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+                <figure class="image">
+                  <img src="./Media/Figures/Mode2_labeled.png" alt="Mode 2: asymmetric local peel from roll/pitch"
+                    style="width: 100%; height: auto;"/>
+                </figure>
+                <div style="padding: 0.75rem 1rem;">
+                  <p style="font-weight: bold; color: #F5821F; margin-bottom: 0.25rem; font-size: 0.85rem;">MODE 2 — LOCAL PEEL RELEASE</p>
+                  <p style="font-size: 0.85rem; color: #555;">Roll or pitch disturbances cause asymmetric deformation and can initiate peel in a single cup. Designed to remain below the full-release threshold during normal perching.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -205,11 +224,12 @@
         <div class="column is-full">
           <h2 class="title is-3">Demo</h2>
 
+          <!-- Main video centered -->
           <div class="columns is-centered" style="margin-top: 2rem;">
             <div class="column is-four-fifths">
               <div class="box" style="padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.75rem;">
-                  LAB RESPONSE — ATTACH &amp; RELEASE CYCLE
+                  LABORATORY RESPONSE — ATTACH &amp; RELEASE CYCLE
                 </p>
                 <video autoplay loop muted playsinline controls style="width: 100%; height: auto; border-radius: 8px;">
                   <source src="./Media/Videos/aim26_lab_reponse.mp4" type="video/mp4">
@@ -219,16 +239,114 @@
             </div>
           </div>
 
-          <div class="columns is-centered" style="margin-top: 1rem;">
+          <!-- Two surface tests side by side -->
+          <div class="columns is-variable is-4" style="margin-top: 1rem;">
+            <div class="column is-half">
+              <div class="box" style="padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.75rem;">METAL — 15° TILT</p>
+                <video autoplay loop muted playsinline controls style="width: 100%; height: auto; border-radius: 8px;">
+                  <source src="./Media/Videos/metal_15.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.75rem;">PLEXIGLASS — 15° TILT</p>
+                <video autoplay loop muted playsinline controls style="width: 100%; height: auto; border-radius: 8px;">
+                  <source src="./Media/Videos/plexi_15.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Franka / Modularity Section -->
+  <section class="section hero is-light" id="platforms">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Plug-and-Play on Different Platforms</h2>
+          <div class="content has-text-justified" style="margin-top: 1.5rem; max-width: 720px; margin-left: auto; margin-right: auto;">
+            <p>
+              SPLAT is designed as a simple bolt-on attachment — no wiring, no pneumatic lines, no dedicated end-effector electronics. The gripper mounts via standard M3 screws on the host robot's flange. A single 0.35&thinsp;mm tether is the only connection between the gripper and the robot, and it routes through the arm channels entirely within the structure. Release is commanded through a rotation already available on the host platform.
+            </p>
+            <p>
+              The same physical unit has been demonstrated on a <strong>UAV</strong> for aerial perching on flat surfaces and on a <strong>Franka Emika robotic manipulator</strong> for contact placement tasks. Switching platforms requires only swapping the top mounting plate — the soft base, arms, and suction cups are identical across configurations.
+            </p>
+          </div>
+
+          <div class="columns is-centered" style="margin-top: 2rem;">
             <div class="column is-four-fifths">
               <div class="box" style="padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.75rem;">
-                  UAV PERCHING
+                  FRANKA EMIKA — CONTACT PLACEMENT DEMO
                 </p>
                 <video autoplay loop muted playsinline controls style="width: 100%; height: auto; border-radius: 8px;">
-                  <source src="./Media/Visualization/figures_uav_perching/laboratory_attach_and_release.mp4" type="video/mp4">
+                  <source src="./Media/Videos/franka_splat.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified" style="margin-top: 1rem; max-width: 720px; margin-left: auto; margin-right: auto;">
+            <p>
+              Load capacity was characterized across four loading conditions — pull (normal), shear, tilt, and twist — on metal and plexiglass surfaces at 0°, 15°, and 30° inclinations. Full results and statistical analysis are provided in the paper.
+            </p>
+          </div>
+
+          <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+            <div class="column is-half" style="padding: 0.75rem;">
+              <div class="box" style="padding: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.5rem;">PULL (NORMAL LOAD)</p>
+                <figure class="image">
+                  <img src="./Media/Visualization/load_capacity/pull.png" alt="Pull load capacity"
+                    style="width: 100%; height: auto; border-radius: 4px;"/>
+                </figure>
+              </div>
+            </div>
+            <div class="column is-half" style="padding: 0.75rem;">
+              <div class="box" style="padding: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.5rem;">SHEAR</p>
+                <figure class="image">
+                  <img src="./Media/Visualization/load_capacity/shear.png" alt="Shear load capacity"
+                    style="width: 100%; height: auto; border-radius: 4px;"/>
+                </figure>
+              </div>
+            </div>
+            <div class="column is-half" style="padding: 0.75rem;">
+              <div class="box" style="padding: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.5rem;">TILT</p>
+                <figure class="image">
+                  <img src="./Media/Visualization/load_capacity/tilt.png" alt="Tilt load capacity"
+                    style="width: 100%; height: auto; border-radius: 4px;"/>
+                </figure>
+              </div>
+            </div>
+            <div class="column is-half" style="padding: 0.75rem;">
+              <div class="box" style="padding: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <p class="heading" style="color: #F5821F; font-weight: bold; margin-bottom: 0.5rem;">TWIST</p>
+                <figure class="image">
+                  <img src="./Media/Visualization/load_capacity/twist.png" alt="Twist load capacity"
+                    style="width: 100%; height: auto; border-radius: 4px;"/>
+                </figure>
               </div>
             </div>
           </div>
@@ -290,15 +408,9 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Citation</h2>
           <div class="content has-text-left" style="background-color: #f5f5f5; padding: 1.5rem; border-left: 4px solid #F5821F; margin-top: 1.5rem;">
-            <p style="font-weight: bold; margin-bottom: 1rem;">If you use this work, please cite:</p>
-            <pre style="background-color: white; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>@inproceedings{domislovic2026splat,
-  author    = {Domislovic, Jakob and Orsag, Matko},
-  title     = {SPLAT: Soft Peelable Lifting-Lip Adhesion Tool for Aerial Perching},
-  booktitle = {Proceedings of the IEEE International Conference on
-               Advanced Intelligent Mechatronics (AIM)},
-  year      = {2026}
-}</code></pre>
-            <p style="margin-top: 1rem; font-style: italic; color: #888; font-size: 0.9rem;">Details (DOI, pages) will be updated upon publication.</p>
+            <p style="font-weight: bold; margin-bottom: 1rem;">If you use this work in your research, please cite it as:</p>
+            <pre style="background-color: white; padding: 1rem; border-radius: 4px;"><code>[Author(s). "Title of the Article." Journal Name, vol. XX, no. YY, pp. ZZ, Year.]</code></pre>
+            <p style="margin-top: 1rem; font-style: italic; color: #666; font-size: 0.95rem;">Citation details will be updated upon article publication.</p>
           </div>
         </div>
       </div>
